@@ -16,7 +16,7 @@ def consolidate_cart(cart)
       if item
         cc_index = 0 
         while cc_index < combined_cart.length do
-          if combined_cart[cc_index][:item] == item[:item]
+          if combined_cart[cc_index][:item] === item[:item]
             #binding.pry
             combined_cart[cc_index][:count] += 1 
           else 
