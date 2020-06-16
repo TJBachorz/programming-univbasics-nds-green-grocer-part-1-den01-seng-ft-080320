@@ -15,14 +15,15 @@ def consolidate_cart(cart)
     item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
       if item
         cc_index = 0 
-        while cc_index
-        if combined_cart[cc_index][:item] == item[:item]
-          #binding.pry
-          combined_cart[cc_index][:count] += 1 
-        else 
-          cart[cc_index][:count] = 1 
-          combined_cart << cart[cc_index]
-        cc_index += 1 
+        while cc_index < combined_cart.length do
+          if combined_cart[cc_index][:item] == item[:item]
+            #binding.pry
+            combined_cart[cc_index][:count] += 1 
+          else 
+            cart[cc_index][:count] = 1 
+            combined_cart << cart[cc_index]
+          cc_index += 1 
+          end
         end
       end
     index += 1 
