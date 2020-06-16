@@ -14,7 +14,7 @@ def consolidate_cart(cart)
   item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
   if item
     cc_index = 0 
-    if combined_cart[cc_index][:item] == item
+    if combined_cart[cc_index][:item] == item[:item]
       combined_cart[cc_index][:count] += 1 
     else 
       combined_cart[cc_index][:count] = 1 
