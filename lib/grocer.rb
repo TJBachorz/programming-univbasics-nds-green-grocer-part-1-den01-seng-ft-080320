@@ -11,8 +11,9 @@ end
 def consolidate_cart(cart)
   combined_cart = Array.new
   index = 0
-  item = find_item_by_name_in_collection(cart[index][:item], cart)
-  while index < cart.length do 
+  item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
+  if combined_cart.any? { item }
+    combined_cart
   
 
 '''def consolidate_cart(cart)
