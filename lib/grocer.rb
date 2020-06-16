@@ -11,16 +11,18 @@ end
 def consolidate_cart(cart)
   combined_cart = Array.new
   index = 0
-  item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
-  if item
-    cc_index = 0 
-    if combined_cart[cc_index][:item] == item[:item]
-      combined_cart[cc_index][:count] += 1 
-    else 
-      combined_cart[cc_index][:count] = 1 
-    cc_index += 1 
-    end
-  index += 1 
+  while index < cart.length do
+    item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
+      if item
+        cc_index = 0 
+        if combined_cart[cc_index][:item] == item[:item]
+          combined_cart[cc_index][:count] += 1 
+        else 
+          combined_cart[cc_index][:count] = 1 
+        cc_index += 1 
+        end
+      end
+    index += 1 
   end
   combined_cart
 end
