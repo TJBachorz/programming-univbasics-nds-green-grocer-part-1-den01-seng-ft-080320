@@ -18,6 +18,11 @@ def consolidate_cart(cart)
       combined_cart[cc_index][:count] += 1 
     else 
       combined_cart[cc_index][:count] = 1 
+    cc_index += 1 
+    end
+  index += 1 
+  end
+end
   
 
 '''def consolidate_cart(cart)
