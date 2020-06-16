@@ -7,9 +7,14 @@ def find_item_by_name_in_collection(name, collection)
     counter += 1 
   end
 end
-  
 
 def consolidate_cart(cart)
+  combined_cart = Array.new
+  index = 0
+  while index < cart.length do 
+  
+
+'''def consolidate_cart(cart)
   combined_cart = Array.new
   counter = 0
   while counter < cart.length do
@@ -23,7 +28,9 @@ def consolidate_cart(cart)
     counter += 1 
   end
   combined_cart
-end
+end'''
+
+
   
   
 
