@@ -12,9 +12,12 @@ def consolidate_cart(cart)
   combined_cart = Array.new
   index = 0
   item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
-  combin
-  if combined_cart.any? { item }
-    combined_cart
+  if item
+    cc_index = 0 
+    if combined_cart[cc_index][:item] == item
+      combined_cart[cc_index][:count] += 1 
+    else 
+      combined_cart[cc_index][:count] = 1 
   
 
 '''def consolidate_cart(cart)
