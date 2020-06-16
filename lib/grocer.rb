@@ -19,7 +19,8 @@ def consolidate_cart(cart)
           binding.pry
           combined_cart[cc_index][:count] += 1 
         else 
-          combined_cart[cc_index][:count] = 1 
+          cart[cc_index][:count] = 1 
+          combined_cart << cart[cc_index]
         cc_index += 1 
         end
       end
