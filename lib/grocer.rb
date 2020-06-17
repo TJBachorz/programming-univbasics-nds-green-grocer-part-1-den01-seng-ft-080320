@@ -8,7 +8,7 @@ def find_item_by_name_in_collection(name, collection)
   end
 end
 
-def consolidate_cart(cart)
+'''def consolidate_cart(cart)
   index = 0
   new_cart = []
   
@@ -33,10 +33,10 @@ def consolidate_cart(cart)
   end
   binding.pry
   new_cart
-end
+end'''
   
 
-'''def consolidate_cart(cart)
+def consolidate_cart(cart)
   combined_cart = Array.new
   counter = 0
   while counter < cart.length do
@@ -50,7 +50,7 @@ end
     counter += 1 
   end
   combined_cart
-end'''
+end
 
 
   
