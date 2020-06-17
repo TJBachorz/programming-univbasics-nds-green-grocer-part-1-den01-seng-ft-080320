@@ -9,27 +9,30 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  combined_cart = Array.new
   index = 0
+  new_cart = []
+  
   while index < cart.length do
-    item = find_item_by_name_in_collection(cart[index][:item], combined_cart)
-      if item
-        cc_index = 0 
-        while cc_index < combined_cart.length do
-          if combined_cart[cc_index][:item] === item[:item]
-            #binding.pry
-            combined_cart[cc_index][:count] += 1 
-          else 
-            cart[cc_index][:count] = 1 
-            combined_cart << cart[cc_index]
-          cc_index += 1 
-          end
+    item = find_item_by_name_in_collection(cart[index][:item], new_cart)
+    binding.pry
+    if item
+      new_cart_index = 0
+      while new_cart_index < new_cart.length do
+        if new_cart[new_cart_index][:item] === item[:item]
+          new_cart[new_cart_index][:count] += 1
+          binding.pry
         end
+        new_cart_index += 1
       end
-    index += 1 
+    else
+      cart[index][:count] = 1
+      new_cart << cart[index]
+      binding.pry
+    end
+    index += 1
   end
   binding.pry
-  combined_cart
+  new_cart
 end
   
 
